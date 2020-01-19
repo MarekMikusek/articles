@@ -80,76 +80,97 @@
                 <div class="title m-b-md text-center">
                     Articles list
                 </div>
-				
-					<div class="row d-flex  p-4">
-						<div class="col-3">
-							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqNrjAJSmwHUSTlg-dFj9qKO0Yc2bLEvx3NOo4fGmciN538XTg&s" width="400">
-						</div>
-						
-						<div class="col-9 w-75">
-							<a href="#">
+				<div class="p-5">
+					<button class="btn btn-info">Add article</button>
+				</div>
+
+				<div class="row d-flex  p-4">
+					<div class="col-3">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqNrjAJSmwHUSTlg-dFj9qKO0Yc2bLEvx3NOo4fGmciN538XTg&s" >
+					</div>
+
+					<div class="col-9 w-75">
+						<a href="#">
 							<div class="h3">Title of first article</div>
 							<div>
-								</a>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in quam dolor. Praesent elementum justo at arcu egestas, eu pulvinar arcu posuere. Nunc semper laoreet elementum. Donec a pellentesque magna. Integer leo nisi, dictum sit amet risus nec, euismod egestas lacus. Etiam feugiat odio turpis. Mauris enim arcu, interdum in consequat eu, rutrum at lorem. Aliquam in quam fermentum, pulvinar lectus a, fringilla massa. Cras dapibus diam in sem condimentum aliquet. Sed a mollis nulla, at dictum arcu. Donec finibus massa sed maximus volutpat. Vestibulum consectetur eleifend nisi eget rutrum.
-							</div>
-							
-							<div>
-								<div class="h4">Coments</div>
-								<ul class="list-group">
+						</a>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in quam dolor. Praesent elementum justo at arcu egestas, eu pulvinar arcu posuere. Nunc semper laoreet elementum. Donec a pellentesque magna. Integer leo nisi, dictum sit amet risus nec, euismod egestas lacus. Etiam feugiat odio turpis. Mauris enim arcu, interdum in consequat eu, rutrum at lorem. Aliquam in quam fermentum, pulvinar lectus a, fringilla massa. Cras dapibus diam in sem condimentum aliquet. Sed a mollis nulla, at dictum arcu. Donec finibus massa sed maximus volutpat. Vestibulum consectetur eleifend nisi eget rutrum.
+					</div>
+
+					<div>
+						<div class="h4">Coments</div>
+						<div class="d-flex">
+							<div><ul class="list-group">
 									<li>Fist comment</li>
 									<li>second comment</li>
 									<li>Third comment</li>
 								</ul>
 							</div>
+							<div class="pl-5">
+								<button class="btn btn-info">Add comment</button>
+							</div>
 						</div>
 					</div>
-				
-				
-					<div class="row d-flex">
-						<div class="col-3 p-4">
-							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGlFkZvWjRG2Gn_x72mG0EFjtX15l5CsX84WCBht1vL7hlyQJtNw&s" width="400">
-						</div>
-						<div class="col-9 w-75">
-							<a href="#">
-							<div class="h3">Title of second article</div>
-							</a>
-							<div>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in quam dolor. Praesent elementum justo at arcu egestas, eu pulvinar arcu posuere. Nunc semper laoreet elementum. Donec a pellentesque magna. Integer leo nisi, dictum sit amet risus nec, euismod egestas lacus. Etiam feugiat odio turpis. Mauris enim arcu, interdum in consequat eu, rutrum at lorem. Aliquam in quam fermentum, pulvinar lectus a, fringilla massa. Cras dapibus diam in sem condimentum aliquet. Sed a mollis nulla, at dictum arcu. Donec finibus massa sed maximus volutpat. Vestibulum consectetur eleifend nisi eget rutrum.
-							</div>
-							<div>
-								<div class="h4">Coments</div>
-								<ul class="list-group">
+				</div>
+			</div>
+
+
+			<div class="row d-flex">
+				<div class="col-3 p-4">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGlFkZvWjRG2Gn_x72mG0EFjtX15l5CsX84WCBht1vL7hlyQJtNw&s" >
+				</div>
+				<div class="col-9 w-75">
+					<a href="#">
+						<div class="h3">Title of second article</div>
+					</a>
+					<div>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in quam dolor. Praesent elementum justo at arcu egestas, eu pulvinar arcu posuere. Nunc semper laoreet elementum. Donec a pellentesque magna. Integer leo nisi, dictum sit amet risus nec, euismod egestas lacus. Etiam feugiat odio turpis. Mauris enim arcu, interdum in consequat eu, rutrum at lorem. Aliquam in quam fermentum, pulvinar lectus a, fringilla massa. Cras dapibus diam in sem condimentum aliquet. Sed a mollis nulla, at dictum arcu. Donec finibus massa sed maximus volutpat. Vestibulum consectetur eleifend nisi eget rutrum.
+					</div>
+					<div>
+						<div class="h4">Coments</div>
+						<div class="d-flex">
+							<div><ul class="list-group">
 									<li>Fist comment</li>
 									<li>second comment</li>
 									<li>Third comment</li>
 								</ul>
 							</div>
+							<div class="pl-5">
+								<button class="btn btn-info">Add comment</button>
+							</div>
 						</div>
 					</div>
-				
-					<div class="row d-flex  p-4">
-						<div class="col-3">
-							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSPZvM3QIyjiKBCS-x2Ix1OYZ57MF861fNcFk2PcBJUqHD2_kpSg&s" width="400">
-						</div>
-						<div class="col-9 w-75">
-							<a href="#">
-							<div class="h3">Title of fird article</div>
-							</a>
-							<div>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in quam dolor. Praesent elementum justo at arcu egestas, eu pulvinar arcu posuere. Nunc semper laoreet elementum. Donec a pellentesque magna. Integer leo nisi, dictum sit amet risus nec, euismod egestas lacus. Etiam feugiat odio turpis. Mauris enim arcu, interdum in consequat eu, rutrum at lorem. Aliquam in quam fermentum, pulvinar lectus a, fringilla massa. Cras dapibus diam in sem condimentum aliquet. Sed a mollis nulla, at dictum arcu. Donec finibus massa sed maximus volutpat. Vestibulum consectetur eleifend nisi eget rutrum.
-							</div>
-							<div>
-								<div class="h4">Coments</div>
-								<ul class="list-group">
+				</div>
+			</div>
+
+			<div class="row d-flex  p-4">
+				<div class="col-3">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSPZvM3QIyjiKBCS-x2Ix1OYZ57MF861fNcFk2PcBJUqHD2_kpSg&s">
+				</div>
+				<div class="col-9 w-75">
+					<a href="#">
+						<div class="h3">Title of fird article</div>
+					</a>
+					<div>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in quam dolor. Praesent elementum justo at arcu egestas, eu pulvinar arcu posuere. Nunc semper laoreet elementum. Donec a pellentesque magna. Integer leo nisi, dictum sit amet risus nec, euismod egestas lacus. Etiam feugiat odio turpis. Mauris enim arcu, interdum in consequat eu, rutrum at lorem. Aliquam in quam fermentum, pulvinar lectus a, fringilla massa. Cras dapibus diam in sem condimentum aliquet. Sed a mollis nulla, at dictum arcu. Donec finibus massa sed maximus volutpat. Vestibulum consectetur eleifend nisi eget rutrum.
+					</div>
+					<div>
+						<div class="h4">Coments</div>
+						<div class="d-flex">
+							<div><ul class="list-group">
 									<li>Fist comment</li>
 									<li>second comment</li>
 									<li>Third comment</li>
 								</ul>
 							</div>
+							<div class="pl-5">
+								<button class="btn btn-info">Add comment</button>
+							</div>
 						</div>
 					</div>
-            </div>
-        </div>
-    </body>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 </html>
