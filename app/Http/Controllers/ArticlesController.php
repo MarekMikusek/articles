@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use Intervention\Image\Facades\Image;
 
 class ArticlesController extends Controller {
 
@@ -33,6 +34,9 @@ class ArticlesController extends Controller {
 		]);
 		
 		$imagePath = request('image')->store('uploads', 'public');
+		
+		$image = Image::make(public_path("storage/{$imagePath}"))->fit(600,600);
+		$image->save();
 		
 		auth()->user()->articles()->create([
 			'title' => $data['title'],

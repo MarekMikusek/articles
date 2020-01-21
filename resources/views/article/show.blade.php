@@ -19,7 +19,7 @@
 	</div>
 
 	<div class="p-5">
-		<a class="btn btn-info" href="/comment/create">Add comment</a>
+		<a class="btn btn-info" href="/comment/create/{{$article->id}}">Add comment</a>
 	</div>
 
 	<ul>

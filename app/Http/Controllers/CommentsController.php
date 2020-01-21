@@ -4,81 +4,48 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CommentsController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+class CommentsController extends Controller {
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index() {
+		//
+	}
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function create($article_id) {
+//		$this->middleware('auth');
+		return view('comment/create',[
+			'article_id' => $article_id,
+		]);
+		
+	}
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Comment $comment)
-    {
-        //
-    }
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @return \Illuminate\Http\Response
+	 */
+	public function store() {
+		
+//		$this->middleware('auth');
+		$data = request()->validate([
+			'article_id' => 'required',
+			'content' => 'required',
+		]);
+		auth()->user()->comments()->create([
+			'article_id' => $data['article_id'],
+			'content' => $data['content'],
+		]);
+		return redirect("/article/{$data['article_id']}");
+	}
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Comment $comment)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Comment $comment)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Comment $comment)
-    {
-        //
-    }
 }

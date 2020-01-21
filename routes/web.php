@@ -22,3 +22,5 @@ Route::get('/', 'ArticlesController@index')->name('article.index');
 Route::post('/article', 'ArticlesController@store')->name('article.store');
 Route::get('/article/create', 'ArticlesController@create')->name('article.create');
 Route::get('/article/{id}', 'ArticlesController@show');
+Route::get('/comment/create/{article_id}', 'CommentsController@create');
+Route::post('/comment', 'CommentsController@store')->name('comment.store');
