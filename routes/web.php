@@ -12,9 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('article.index');
 });
 
 Auth::routes();
 
-Route::get('/home', 'ArticlesController@index')->name('welcome');
+Route::get('/', 'ArticlesController@index')->name('article.index');
+
+Route::post('/article', 'ArticlesController@store')->name('article.store');
+Route::get('/article/create', 'ArticlesController@create')->name('article.create');
+Route::get('/article/{id}', 'ArticlesController@show');
