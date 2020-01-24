@@ -16,40 +16,48 @@ class ArticlesController extends Controller {
 	public function index() {
 		$articles = Article::all();
 		return view('article.index', [
-			'articles'=> $articles,
+			'articles' => $articles,
 		]);
 	}
 
 	public function create() {
-		$this->middleware('auth');
-		return view('article/create');
+		if (auth()->user()) {
+			$this->middleware('auth');
+			return view('article/create');
+		} else {
+			return redirect('/login');
+		}
 	}
 
 	public function store() {
-		$this->middleware('auth');
-		$data = request()->validate([
-			'title' => 'required',
-			'content' => 'required',
-			'image' => ['required', 'image']
-		]);
-		
-		$imagePath = request('image')->store('uploads', 'public');
-		
-		$image = Image::make(public_path("storage/{$imagePath}"))->fit(600,600);
-		$image->save();
-		
-		auth()->user()->articles()->create([
-			'title' => $data['title'],
-			'content' => $data['content'],
-			'image' =>$imagePath,
-		]);
-		return redirect('/');
+		$user = auth()->user();
+		if ($user) {
+			$data = request()->validate([
+				'title' => 'required',
+				'content' => 'required',
+				'image' => ['required', 'image']
+			]);
+
+			$imagePath = request('image')->store('uploads', 'public');
+
+			$image = Image::make(public_path("storage/{$imagePath}"))->fit(400, 400);
+			$image->save();
+
+			$user->articles()->create([
+				'title' => $data['title'],
+				'content' => $data['content'],
+				'image' => $imagePath,
+			]);
+			return redirect('/');
+		} else {
+			return redirect('/login');
+		}
 	}
-	
+
 	public function show($id) {
 		$article = Article::find($id);
-		return view('article/show',[
-			'article'=>$article,
+		return view('article/show', [
+			'article' => $article,
 		]);
 	}
 

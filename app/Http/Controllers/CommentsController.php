@@ -21,11 +21,14 @@ class CommentsController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function create($article_id) {
-//		$this->middleware('auth');
-		return view('comment/create',[
-			'article_id' => $article_id,
-		]);
-		
+		$user = auth()->user();
+		if ($user) {
+			return view('comment/create', [
+				'article_id' => $article_id,
+			]);
+		} else {
+			return redirect('/login');
+		}
 	}
 
 	/**
@@ -35,17 +38,21 @@ class CommentsController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function store() {
-		
-//		$this->middleware('auth');
-		$data = request()->validate([
-			'article_id' => 'required',
-			'content' => 'required',
-		]);
-		auth()->user()->comments()->create([
-			'article_id' => $data['article_id'],
-			'content' => $data['content'],
-		]);
-		return redirect("/article/{$data['article_id']}");
+
+		$user = auth()->user();
+		if ($user) {
+			$data = request()->validate([
+				'article_id' => 'required',
+				'content' => 'required',
+			]);
+			$user->comments()->create([
+				'article_id' => $data['article_id'],
+				'content' => $data['content'],
+			]);
+			return redirect("/article/{$data['article_id']}");
+		} else {
+			return redirect('/login');
+		}
 	}
 
 }
