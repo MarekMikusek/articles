@@ -38,11 +38,11 @@ class User extends Authenticatable {
 	];
 
 	public function articles() {
-		return $this->hasMany(Article::class)->orderBy('created_at', 'DESC');
+		return $this->hasMany(Article::class)->orderBy('id', 'DESC');
 	}
 
 	public function comments() {
-		return $this->hasMany(Comment::class)->orderBy('created_at', 'DESC');
+		return $this->hasMany(Comment::class)->orderBy('id', 'DESC');
 	}
 
 }

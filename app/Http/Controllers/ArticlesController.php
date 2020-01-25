@@ -17,6 +17,7 @@ class ArticlesController extends Controller {
 		$articles = Article::all();
 		return view('article.index', [
 			'articles' => $articles,
+			'can_add_article'=>!!auth()->user()
 		]);
 	}
 
@@ -56,8 +57,10 @@ class ArticlesController extends Controller {
 
 	public function show($id) {
 		$article = Article::find($id);
+		$user = auth()->user();
 		return view('article/show', [
 			'article' => $article,
+			'canAddComment'=>$user && $user->id !=$article->user_id,
 		]);
 	}
 

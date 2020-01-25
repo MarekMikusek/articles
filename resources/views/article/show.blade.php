@@ -17,17 +17,17 @@
 			</div>
 		</div>
 	</div>
-
+	@if($canAddComment)
 	<div class="p-5">
 		<a class="btn btn-info" href="/comment/create/{{$article->id}}">Add comment</a>
 	</div>
-
+	@endif
 	<ul>
-	@foreach($article->comments as $comment)	
-	<li>{{$comment->user->username}} : {{$comment -> content}}</li>
-	@endforeach
-</ul>
-	
+		@foreach($article->comments as $comment)	
+		<li>{{$comment->user->username}} : {{$comment -> content}}</li>
+		@endforeach
+	</ul>
+
 </div>
 </div>
 @endsection

@@ -3,11 +3,11 @@
 @section('content')
 
 <div class="content">
-
+@if($can_add_article)
 	<div class="p-5">
 		<a class="btn btn-info" href="/article/create">Add article</a>
 	</div>
-
+@endif
 @foreach($articles as $article)
 <div class="row d-flex">
 	<div class="col-3 p-4">

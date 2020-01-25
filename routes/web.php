@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('article.index');
-});
+//Route::get('/', function () {
+//    return view('article.index');
+//});
 
 Auth::routes();
 

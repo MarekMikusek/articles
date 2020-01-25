@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Article;
 
 class CommentsController extends Controller {
 
@@ -40,19 +41,23 @@ class CommentsController extends Controller {
 	public function store() {
 
 		$user = auth()->user();
-		if ($user) {
-			$data = request()->validate([
-				'article_id' => 'required',
-				'content' => 'required',
-			]);
-			$user->comments()->create([
-				'article_id' => $data['article_id'],
-				'content' => $data['content'],
-			]);
-			return redirect("/article/{$data['article_id']}");
-		} else {
+
+		if (!$user) {
 			return redirect('/login');
 		}
+		$article = Article::findOrFail(request('article_id'));
+		if ($user->id == $article->user_id) {
+			return redirect("/article/{$article->id}");
+		}
+		$data = request()->validate([
+			'article_id' => 'required',
+			'content' => 'required',
+		]);
+		$user->comments()->create([
+			'article_id' => $data['article_id'],
+			'content' => $data['content'],
+		]);
+		return redirect("/article/{$data['article_id']}");
 	}
 
 }
